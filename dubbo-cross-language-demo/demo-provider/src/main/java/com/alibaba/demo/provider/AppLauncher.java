@@ -1,11 +1,24 @@
 package com.alibaba.demo.provider;
 
+
 import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ProtocolConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
 import com.alibaba.dubbo.config.spring.ServiceBean;
 import com.alibaba.dubbo.demo.api.TestService;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.system.ApplicationPidFileWriter;
+import org.springframework.boot.system.EmbeddedServerPortFileWriter;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
+@EnableAspectJAutoProxy
+@Configuration
+@EnableAutoConfiguration
+@ComponentScan(basePackageClasses = {AppLauncher.class})
 public class AppLauncher {
 
     private static final String APPLICATION_NAME = "demo-provider";
@@ -36,6 +49,11 @@ public class AppLauncher {
 
 
     public static void main(String[] args) throws Exception {
+        ConfigurableApplicationContext context =
+                new SpringApplicationBuilder(AppLauncher.class).run(args);
+        context.addApplicationListener(new ApplicationPidFileWriter());
+        context.addApplicationListener(new EmbeddedServerPortFileWriter());
+
         //Prevent to get IPV6 address,this way only work in debug mode
         //But you can pass use -Djava.net.preferIPv4Stack=true,then it work well whether in debug mode or not
         System.setProperty("java.net.preferIPv4Stack", "true");
@@ -52,8 +70,6 @@ public class AppLauncher {
         serviceConfig.setInterface(TestService.class);
         serviceConfig.setRef(testServiceImpl);
         serviceConfig.export();
-
-        System.in.read(); // press any key to exit
     }
 
 }
