@@ -51,6 +51,8 @@ limitations under the License.
         <module>dubbo-admin</module>
         <module>dubbo-demo</module>
         <module>dubbo-plugin</module>
+        <module>dubbo-spring-boot-starter</module>
+        <module>dubbo-cross-language-demo</module>
     </modules>
     <profiles>
         <profile>
