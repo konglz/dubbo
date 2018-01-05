@@ -2,6 +2,7 @@ package com.alibaba.demo.provider;
 
 
 import com.alibaba.dubbo.config.ApplicationConfig;
+import com.alibaba.dubbo.config.MonitorConfig;
 import com.alibaba.dubbo.config.ProtocolConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
 import com.alibaba.dubbo.config.spring.ServiceBean;
@@ -27,24 +28,30 @@ public class AppLauncher {
     private static final String REGISTRY_ADDRESS = "zookeeper://10.18.3.28:2181";
 
 
-    public static ApplicationConfig applicationConfig() {
+    private static ApplicationConfig applicationConfig() {
         ApplicationConfig appConfig = new ApplicationConfig();
         appConfig.setName(APPLICATION_NAME);
         return appConfig;
     }
 
-    public static ProtocolConfig protocolConfig() {
+    private static ProtocolConfig protocolConfig() {
         ProtocolConfig protocolConfig = new ProtocolConfig();
         protocolConfig.setName(PROTOCOL_NAME);
         protocolConfig.setPort(PROTOCOL_PORT);
         return protocolConfig;
     }
 
-    public static RegistryConfig registryConfig() {
+    private static RegistryConfig registryConfig() {
         RegistryConfig registryConfig = new RegistryConfig();
         registryConfig.setAddress(REGISTRY_ADDRESS);
         registryConfig.setCheck(true);
         return registryConfig;
+    }
+
+    private static MonitorConfig monitorConfig() {
+        MonitorConfig monitorConfig = new MonitorConfig();
+        monitorConfig.setProtocol("registry");
+        return monitorConfig;
     }
 
 
@@ -69,6 +76,7 @@ public class AppLauncher {
         serviceConfig.setRegistry(registryConfig);
         serviceConfig.setInterface(TestService.class);
         serviceConfig.setRef(testServiceImpl);
+        serviceConfig.setMonitor(monitorConfig());
         serviceConfig.export();
     }
 
