@@ -18,7 +18,7 @@ spring:
       name: dubbo
       port: 20800
     httpProtocol:
-      name: jsonrpc
+      name: rest
       port: ${server.port}
       contextpath: /dubbo
       server: servlet
