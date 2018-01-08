@@ -3,6 +3,7 @@ package com.alibaba.demo.provider;
 import java.util.Map;
 import javax.annotation.Resource;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.dubbo.demo.api.DepartmentReq;
 import com.alibaba.dubbo.demo.api.NameReq;
 import com.alibaba.dubbo.demo.api.TestReq;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
-    @Resource
+    @Reference
     private TestService testService;
 
     @GetMapping(value = "/invokeVoid")
