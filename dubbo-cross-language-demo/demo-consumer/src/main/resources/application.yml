@@ -9,9 +9,9 @@ spring:
       owner: konglingzhen
       organization: wsd-java
     zkRegistry:
-      address: zookeeper://10.18.3.28:2181
+      address: zookeeper://127.0.0.1:2181
     redisRegistry:
-      address: redis://10.18.3.28:6379
+      address: redis://127.0.0.1:6379
     dubboProtocol:
       name: dubbo
       port: 30800
