@@ -1,7 +1,7 @@
 server:
   port: 23767
-  servlet-path: /api/*
-  context-path: /
+#  servlet-path: /api/*
+#  context-path: /
 
 spring:
   dubbo:
@@ -20,7 +20,7 @@ spring:
     httpProtocol:
       name: rest
       port: ${server.port}
-      contextpath: /dubbo
+      contextpath: /services
       server: servlet
     monitor:
       protocol: registry
