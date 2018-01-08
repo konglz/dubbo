@@ -1,6 +1,7 @@
 package com.alibaba.demo.provider;
 
 
+import com.alibaba.boot.dubbo.annotation.EnableDubboConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.system.ApplicationPidFileWriter;
@@ -13,6 +14,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @EnableAspectJAutoProxy
 @Configuration
 @EnableAutoConfiguration
+@EnableDubboConfiguration
 @ComponentScan(basePackageClasses = {AppLauncher.class})
 public class AppLauncher {
 

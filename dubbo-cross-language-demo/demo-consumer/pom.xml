@@ -19,19 +19,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.4</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.101tec</groupId>
-            <artifactId>zkclient</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>com.alibaba</groupId>
-            <artifactId>dubbo</artifactId>
+            <artifactId>spring-boot-starter-dubbo-wsd</artifactId>
+            <version>2.0.0-SNAPSHOT</version>
         </dependency>
 
         <!-- start boot START -->
