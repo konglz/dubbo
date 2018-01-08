@@ -1,4 +1,4 @@
-package com.alibaba.demo.provider;
+package com.alibaba.demo.consumer;
 
 import java.util.Map;
 import javax.ws.rs.Consumes;

@@ -14,7 +14,7 @@ spring:
       address: redis://10.18.3.28:6379
     dubboProtocol:
       name: dubbo
-      port: 20800
+      port: 30800
     httpProtocol:
       name: rest
       port: ${server.port}

@@ -1,17 +1,9 @@
-package com.alibaba.demo.provider;
+package com.alibaba.demo.consumer;
 
 
 //import com.alibaba.boot.dubbo.annotation.EnableDubboConfiguration;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import com.alibaba.boot.dubbo.annotation.EnableDubboConfiguration;
-import com.alibaba.dubbo.config.ApplicationConfig;
-import com.alibaba.dubbo.config.ProtocolConfig;
-import com.alibaba.dubbo.config.RegistryConfig;
-import com.alibaba.dubbo.config.spring.ServiceBean;
-import com.alibaba.dubbo.demo.api.TestService;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.system.ApplicationPidFileWriter;
