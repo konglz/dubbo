@@ -1,7 +1,5 @@
 server:
   port: 23767
-#  servlet-path: /api/*
-#  context-path: /
 
 spring:
   dubbo:
