@@ -1,8 +1,5 @@
 package com.alibaba.demo.consumer;
 
-
-//import com.alibaba.boot.dubbo.annotation.EnableDubboConfiguration;
-
 import com.alibaba.boot.dubbo.annotation.EnableDubboConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
