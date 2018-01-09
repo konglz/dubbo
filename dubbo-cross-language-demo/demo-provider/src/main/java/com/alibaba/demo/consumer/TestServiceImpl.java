@@ -8,6 +8,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.alibaba.dubbo.common.utils.StringUtils;
+import com.alibaba.dubbo.config.annotation.Constants;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.dubbo.config.annotation.ServiceMethod;
 import com.alibaba.dubbo.demo.api.DepartmentReq;
@@ -22,7 +23,7 @@ import org.springframework.stereotype.Component;
 @Path("tests")
 @Consumes({MediaType.APPLICATION_JSON})
 @Produces({ContentType.APPLICATION_JSON_UTF_8})
-@Service(interfaceClass = TestService.class, protocol = {"dubbo", "rest"})
+@Service(interfaceClass = TestService.class, protocol = {Constants.PROTOCOL_DUBBO, Constants.PROTOCOL_REST})
 public class TestServiceImpl implements TestService {
 
     @ServiceMethod(timeout = 1)
