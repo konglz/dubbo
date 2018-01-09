@@ -9,6 +9,7 @@ import javax.ws.rs.core.MediaType;
 
 import com.alibaba.dubbo.common.utils.StringUtils;
 import com.alibaba.dubbo.config.annotation.Service;
+import com.alibaba.dubbo.config.annotation.ServiceMethod;
 import com.alibaba.dubbo.demo.api.DepartmentReq;
 import com.alibaba.dubbo.demo.api.NameReq;
 import com.alibaba.dubbo.demo.api.TestReq;
@@ -24,6 +25,7 @@ import org.springframework.stereotype.Component;
 @Service(interfaceClass = TestService.class, protocol = {"dubbo", "rest"})
 public class TestServiceImpl implements TestService {
 
+    @ServiceMethod(timeout = 1)
     @POST
     @Path("invokeVoid")
     @Override
