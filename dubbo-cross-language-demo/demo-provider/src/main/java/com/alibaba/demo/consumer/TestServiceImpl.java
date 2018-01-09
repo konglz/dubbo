@@ -31,6 +31,12 @@ public class TestServiceImpl implements TestService {
     @Path("invokeVoid")
     @Override
     public TestRes invokeVoid() {
+        try {
+            Thread.sleep(2500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            Thread.currentThread().interrupt();
+        }
         return newResult("void");
     }
 
