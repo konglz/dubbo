@@ -26,7 +26,7 @@ import org.springframework.stereotype.Component;
 @Service(interfaceClass = TestService.class, protocol = {Constants.PROTOCOL_DUBBO, Constants.PROTOCOL_REST})
 public class TestServiceImpl implements TestService {
 
-    @ServiceMethod(timeout = 1)
+    @ServiceMethod(timeout = 2000)
     @POST
     @Path("invokeVoid")
     @Override
